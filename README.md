@@ -99,7 +99,9 @@ VITE_QUESTION_COUNT=5
    - `VITE_QUESTION_COUNT`：填入题目数量，例如 `5`。
 
 ### 开启 GitHub Pages 功能
-1. 在仓库的 **Settings** -> **Pages** 选项卡下。
-2. 找到 **Build and deployment**，将 **Source** 改为 **`GitHub Actions`**。
-3. 推送代码后，转到项目顶部的 **Actions** 标签页，你会看到名为 "Deploy to GitHub Pages" 的工作流正在自动运行。
-4. 部署完成后，即可得到一个形如 `https://<你的用户名>.github.io/<仓库名>/` 的公开游玩链接！你可以将这个链接分享给任何人！
+1. 在 GitHub 仓库的 **Settings** 页面，左侧选单点选 **Pages**。
+2. 在 **Build and deployment** > **Source** 选择 **Deploy from a branch**。
+3. 推送代码到 GitHub 后，Action 会自动运行并构建静态文件（此动作成功后会自动建立 `gh-pages` 分支）。
+4. 在第一次 Action 执行成功后，回到 Pages 设定页。在 **Branch** 选择 **`gh-pages`** 并选择目录 **`/ (root)`**。
+5. 点选 **Save**。
+6. 稍等片刻，GitHub Pages 将会自动部署完成，你将得到一个形如 `https://<用户名>.github.io/<仓库名>/` 的公开游玩链接！
