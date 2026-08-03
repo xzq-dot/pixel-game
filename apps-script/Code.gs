@@ -42,9 +42,15 @@ function getQuestions(params) {
     });
   }
   
-  // 随机打乱并抽取 N 题
-  questions.sort(function() { return 0.5 - Math.random() });
-  var count = params.count || 5;
+  // Fisher-Yates 洗牌算法，确保完全随机
+  for (var k = questions.length - 1; k > 0; k--) {
+    var j = Math.floor(Math.random() * (k + 1));
+    var temp = questions[k];
+    questions[k] = questions[j];
+    questions[j] = temp;
+  }
+  
+  var count = params.count || 6;
   var selected = questions.slice(0, count);
   
   return { success: true, data: selected };
